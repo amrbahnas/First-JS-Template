@@ -80,7 +80,7 @@ function backgroundcontrol() {
     if (backgroundstatus === true) {
         backgroundinterval = setInterval(() => {
             let randomNumber = Math.floor(Math.random() * imageArray.length);
-            landingImage.style.backgroundImage = `url(../img/${imageArray[randomNumber]})`;
+            landingImage.style.backgroundImage = `url(/img/${imageArray[randomNumber]})`;
         }, 10000)
     } else {
         clearInterval(backgroundinterval)

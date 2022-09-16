@@ -59,7 +59,7 @@ backgroundbtn.forEach(span => {
         e.target.classList.add("active");
         window.localStorage.setItem("backgroundstatus", e.target.dataset.background)
         if (e.target.dataset.background === "yes") {
-            backgroundstatus = true;
+            backgroundstatus = "true";
             window.localStorage.setItem("backgroudcontrol", backgroundstatus)
             backgroundcontrol();
         } else {
@@ -76,19 +76,20 @@ backgroundbtn.forEach(span => {
 let landingImage = document.querySelector(".landing");
 let imageArray = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"]
 
+backgroundcontrol();
+console.log(backgroundstatus)
 function backgroundcontrol() {
-    if (backgroundstatus === true) {
+    if (backgroundstatus === "true") {
         backgroundinterval = setInterval(() => {
             let randomNumber = Math.floor(Math.random() * imageArray.length);
             landingImage.style.backgroundImage = `url(img/${imageArray[randomNumber]})`;
-        }, 10000)
+        }, 1000)
     } else {
         clearInterval(backgroundinterval)
     }
 
 }
 
-backgroundcontrol();
 
 
 

@@ -41,9 +41,12 @@ liColors.forEach(li => {
 let backgroundbtn = document.querySelectorAll(".random-background span")
 let backgroundstatus = true;
 
-if (window.localStorage.getItem("backgroudcontrol")) {
-    backgroundstatus = window.localStorage.getItem("backgroudcontrol")
+if (window.localStorage.getItem("backgroudcontrol") == "true") {
+    backgroundstatus = true
+} else {
+    backgroundstatus = false;
 }
+
 if (window.localStorage.getItem("backgroundstatus")) {
     backgroundbtn.forEach(span => {
         span.classList.remove("active")
@@ -59,7 +62,7 @@ backgroundbtn.forEach(span => {
         e.target.classList.add("active");
         window.localStorage.setItem("backgroundstatus", e.target.dataset.background)
         if (e.target.dataset.background === "yes") {
-            backgroundstatus = "true";
+            backgroundstatus = true;
             window.localStorage.setItem("backgroudcontrol", backgroundstatus)
             backgroundcontrol();
         } else {
@@ -79,7 +82,7 @@ let imageArray = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"]
 backgroundcontrol();
 console.log(backgroundstatus)
 function backgroundcontrol() {
-    if (backgroundstatus === "true") {
+    if (backgroundstatus === true) {
         backgroundinterval = setInterval(() => {
             let randomNumber = Math.floor(Math.random() * imageArray.length);
             landingImage.style.backgroundImage = `url(img/${imageArray[randomNumber]})`;

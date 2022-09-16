@@ -83,15 +83,78 @@ function backgroundcontrol() {
         backgroundinterval = setInterval(() => {
             let randomNumber = Math.floor(Math.random() * imageArray.length);
             landingImage.style.backgroundImage = `url(img/${imageArray[randomNumber]})`;
-        }, 1000)
+        }, 10000)
     } else {
         clearInterval(backgroundinterval)
     }
 
 }
 
+//skills  section
+
+
+let skillsSection = document.querySelector(".skills");
+
+window.onscroll = function () {
+    let skillsHeight = skillsSection.offsetHeight;
+    let skillsOfsetTop = skillsSection.offsetTop;
+    if (this.scrollY >= (skillsHeight + skillsOfsetTop - this.innerHeight)) {
+        document.querySelectorAll(".skills span").forEach(e => { e.style.width = e.dataset.process })
+    }
+}
 
 
 
+// gallary section
 
 
+let allImages = document.querySelectorAll(".gallary img");
+
+allImages.forEach(img => {
+    img.addEventListener("click", function () {
+        // create poper
+        let popurLayer = document.createElement("div");
+        popurLayer.classList.add("popurLayer");
+
+        // create image container
+        let imageBox = document.createElement("div");
+        imageBox.classList.add("imageBox");
+
+        // add alt text if found 
+        if (img.alt !== "") {
+            let h2Object = document.createElement("h2")
+            h2Object.classList.add("img-alt");
+            let altText = document.createTextNode(img.alt);
+            h2Object.appendChild(altText);
+            imageBox.appendChild(h2Object);
+        }
+
+        // show selected img
+        let imgObject = document.createElement("img");
+        imgObject.src = img.src;
+        imgObject.style.width = "100%";
+        imageBox.appendChild(imgObject);
+
+        // close btn 
+        let closeBtn = document.createElement("div");
+        closeBtn.classList.add("closeBtn");
+        closeBtn.innerText = "x";
+        imageBox.appendChild(closeBtn);
+
+        // add parent div to body 
+        popurLayer.appendChild(imageBox);
+        document.body.appendChild(popurLayer);
+
+
+    })
+})
+
+// close botton
+
+document.addEventListener("click", function (e) {
+    if (e.target.className === "closeBtn") {
+        e.target.parentElement.parentElement.remove();
+    }
+})
+
+// end gallary section

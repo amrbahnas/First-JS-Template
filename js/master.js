@@ -1,17 +1,42 @@
+// up button
+
+let upButton = document.querySelector(".up-button");
+
+window.addEventListener('scroll', function () {
+
+    if (window.scrollY > window.innerHeight) {
+        upButton.style.display = "block";
+    } else {
+        upButton.style.display = "none";
+    }
+});
+
+upButton.onclick = function () {
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+
+}
+
 //options button
 
-let optionsBtn = document.querySelector(".toggle-settings");
-optionsBtn.addEventListener("click", function () {
-    document.querySelector(".setting-box").classList.toggle("opened");
-    document.querySelector(".toggle-settings .options").classList.toggle("fa-spin");
-})
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("toggle-control")) {
+        document.querySelector(".setting-box").classList.toggle("opened");
+        document.querySelector(".toggle-settings .options").classList.toggle("fa-spin");
+    } else if (e.target.classList.contains("no-close")) {
+        return false;
+    }
 
+    else {
+        document.querySelector(".setting-box").classList.remove("opened");
+        document.querySelector(".toggle-settings .options").classList.remove("fa-spin");
+    }
+}
 
-
-// document.addEventListener("click",function(){
-//     document.querySelector(".setting-box").classList.remove("opened");
-//     document.querySelector(".toggle-settings .options").classList.remove("fa-spin");
-//     })
+)
 
 
 // color box //
@@ -80,7 +105,6 @@ let landingImage = document.querySelector(".landing");
 let imageArray = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"]
 
 backgroundcontrol();
-console.log(backgroundstatus)
 function backgroundcontrol() {
     if (backgroundstatus === true) {
         backgroundinterval = setInterval(() => {

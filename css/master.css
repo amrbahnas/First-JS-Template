@@ -136,7 +136,7 @@ a {
 }
 
 .setting-box .setting-container .option-box .color-links li:nth-child(2) {
-    background-color: #E91E63;
+    background-color: var(--color-active);
 }
 
 .setting-box .setting-container .option-box .color-links li:nth-child(3) {
@@ -463,7 +463,7 @@ nav .links li a:hover {
     transform: translate(-50%, -50%);
     width: 3px;
     height: 100%;
-    background-color: #E91E63;
+    background-color: var(--color-active);
 }
 
 .Timeline .container .box-container::before {
@@ -479,7 +479,7 @@ nav .links li a:hover {
     font-weight: bold;
     border-radius: 5px;
     text-align: center;
-    background-color: #E91E63;
+    background-color: var(--color-active);
 }
 
 .Timeline .container .box-container.two::before {
@@ -498,12 +498,18 @@ nav .links li a:hover {
     transform: translate(-50%, -50%);
     width: 3px;
     height: 100%;
-    background-color: #E91E63;
+    background-color: var(--color-active);
 }
 
 @media (max-width:768px) {
     .Timeline .container .box-container::after {
-        display: none;
+        left: 100%;
+        top: 0;
+        transform: none;
+    }
+
+    .Timeline .container .box-container::before {
+        left: 90%;
     }
 }
 
@@ -534,7 +540,7 @@ nav .links li a:hover {
     width: 10px;
     height: 10px;
     background-color: white;
-    border: 3px solid #E91E63;
+    border: 3px solid var(--color-active);
     border-radius: 50%;
     z-index: 99;
 }
@@ -554,7 +560,6 @@ nav .links li a:hover {
     border-color: transparent transparent transparent white;
     border-style: solid;
     border-width: 8px;
-    right: 10px;
     top: 20px;
     right: -15px;
 
@@ -570,9 +575,24 @@ nav .links li a:hover {
     left: -15px;
 }
 
+@media (max-width:768px) {
+    .Timeline .container .box-container .box.right::after {
+        border-color: transparent transparent transparent white;
+        top: 20px;
+        left: 100%;
+    }
+
+    .Timeline .container .box-container .box.right::before {
+        left: calc(100% + 13px);
+    }
+
+    .Timeline .container .box-container .box.left::before {
+        right: -30px;
+    }
+}
 
 .Timeline .container .box-container .box h3 {
-    color: #E91E63;
+    color: var(--color-active);
     text-transform: capitalize;
     margin-bottom: 10px;
 }

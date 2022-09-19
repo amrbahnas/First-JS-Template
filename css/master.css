@@ -99,12 +99,13 @@ a {
     border-top-right-radius: 20px;
     text-align: center;
     cursor: pointer;
+    border: 1px solid #eeeeee;
 }
 
 .setting-box .setting-container .option-box {
     background-color: #eee;
     padding: 20px 10px;
-    margin: 20px 0;
+    margin: 20px 0 70px;
 }
 
 .setting-box .setting-container .option-box h4 {
@@ -530,7 +531,7 @@ nav .links li a:hover {
 
 @media (max-width:768px) {
     .Timeline .container .box-container .box.right {
-        margin: 100px 0 0 50px;
+        margin: 50px 0 0 0
     }
 }
 

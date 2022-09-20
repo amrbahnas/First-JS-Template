@@ -20,7 +20,21 @@ upButton.onclick = function () {
 
 }
 
-//options button
+
+//to section bullets
+
+let sectionButton = document.querySelectorAll(".tosection li span")
+
+sectionButton.forEach(el => {
+    el.addEventListener("click", function (e) {
+        document.querySelector(e.target.dataset.section).scrollIntoView({
+            behavior: 'smooth'
+        })
+    })
+})
+
+
+//open options section button
 
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("toggle-control")) {
@@ -37,7 +51,6 @@ document.addEventListener("click", function (e) {
 }
 
 )
-
 
 // color box //
 
@@ -68,8 +81,8 @@ let backgroundstatus = true;
 
 if (window.localStorage.getItem("backgroudcontrol") == "true") {
     backgroundstatus = true
-} else {
-    backgroundstatus = false;
+} else if (window.localStorage.getItem("backgroudcontrol") == "false") {
+    backgroundstatus = false
 }
 
 if (window.localStorage.getItem("backgroundstatus")) {
@@ -77,7 +90,6 @@ if (window.localStorage.getItem("backgroundstatus")) {
         span.classList.remove("active")
     });
     document.querySelector(`.random-background span[data-background="${window.localStorage.getItem("backgroundstatus")}"]`).classList.add("active");
-
 }
 
 let backgroundinterval;
@@ -110,15 +122,76 @@ function backgroundcontrol() {
         backgroundinterval = setInterval(() => {
             let randomNumber = Math.floor(Math.random() * imageArray.length);
             landingImage.style.backgroundImage = `url(img/${imageArray[randomNumber]})`;
-        }, 10000)
+        }, 1000)
     } else {
         clearInterval(backgroundinterval)
     }
 
 }
 
-//skills  section
 
+// bullets box //
+
+let bulletsbtn = document.querySelectorAll(".bulletsControl span")
+let bulletsstatus = true;
+
+if (window.localStorage.getItem("bulletscontrol") == "true") {
+    bulletsstatus = true
+    document.querySelector(".tosection").style.display = "block"
+} else {
+    bulletsstatus = false;
+    document.querySelector(".tosection").style.display = "none";
+
+}
+
+if (window.localStorage.getItem("bulletscontrol")) {
+    bulletsbtn.forEach(span => {
+        span.classList.remove("active")
+    });
+    document.querySelector(`.bulletsControl span[data-bullets="${window.localStorage.getItem("bulletsstatus")}"]`).classList.add("active");
+}
+
+bulletsbtn.forEach(span => {
+    span.addEventListener("click", (e) => {
+        e.target.parentElement.querySelector(".active").classList.remove("active");
+        e.target.classList.add("active");
+        window.localStorage.setItem("bulletsstatus", e.target.dataset.bullets)
+        if (e.target.dataset.bullets === "yes") {
+            bulletsstatus = true;
+            window.localStorage.setItem("bulletscontrol", bulletsstatus)
+            document.querySelector(".tosection").style.display = "block"
+        } else {
+            window.localStorage.setItem("bulletscontrol", false)
+            document.querySelector(".tosection").style.display = "none";
+
+        }
+    })
+})
+
+
+//reset-options buttom
+
+
+let resetButtom = document.querySelector(".reset-options");
+
+resetButtom.onclick = function () {
+    // window.localStorage.clear();
+    window.localStorage.removeItem("activecolor")
+    window.localStorage.removeItem("backgroundstatus")
+    window.localStorage.removeItem("backgroudcontrol")
+    window.localStorage.removeItem("bulletsstatus")
+    window.localStorage.removeItem("bulletscontrol")
+    window.location.reload();
+}
+
+// mini menu button
+
+let menuButton = document.querySelector(" nav>i.fa-solid");
+menuButton.onclick = function () {
+    document.querySelector("nav .mini-menu").classList.toggle("display-mini-menu");
+}
+
+//skills  section
 
 let skillsSection = document.querySelector(".skills");
 
@@ -176,7 +249,7 @@ allImages.forEach(img => {
     })
 })
 
-// close botton
+// close overlay image botton
 
 document.addEventListener("click", function (e) {
     if (e.target.className === "closeBtn") {
@@ -184,4 +257,3 @@ document.addEventListener("click", function (e) {
     }
 })
 
-// end gallary section

@@ -34,7 +34,7 @@
             <div class="option-box no-close">
                 <h4 class="no-close">color</h4>
                 <ul class="color-links">
-                    <li class="active" data-color="rgba(247, 81, 20, 0.968)" class="no-close"></li>
+                    <li class="active no-close" data-color="rgba(247, 81, 20, 0.968)"></li>
                     <li data-color="#E91E63" class="no-close"></li>
                     <li data-color="#009688" class="no-close"></li>
                     <li data-color="#03A9F4" class="no-close"></li>
@@ -45,16 +45,53 @@
             <!-- start box  -->
             <div class="option-box  no-close">
                 <h4 class="no-close">Random Background</h4>
-                <div class="random-background">
+                <div class="random-background optionBtn">
                     <span class="yes active no-close" data-background="yes">Yes</span>
                     <span class="no no-close" data-background="no">No</span>
                 </div>
             </div>
             <!-- end box -->
+            <!-- start box  -->
+            <div class="option-box  no-close">
+                <h4 class="no-close">Show bullets</h4>
+                <div class="bulletsControl optionBtn">
+                    <span class="yes  no-close " data-bullets="yes">Yes</span>
+                    <span class="no no-close active" data-bullets="no">No</span>
+                </div>
+            </div>
+            <!-- end box -->
 
         </div>
+        <button class="reset-options  no-close">Reset options</button>
     </div>
     <!-- end setting box -->
+    <!-- start fast section -->
+    <div class="tosection">
+        <ul>
+            <li>
+                <div>landing</div> <span data-section=".landing"></span>
+            </li>
+            <li>
+                <div>about us</div> <span data-section=".about_us"></span>
+            </li>
+            <li>
+                <div>skills</div> <span data-section=".skills"></span>
+            </li>
+            <li>
+                <div>gallary</div> <span data-section=".gallary"></span>
+            </li>
+            <li>
+                <div>Timeline</div> <span data-section=".Timeline"></span>
+            </li>
+            <li>
+                <div>features</div> <span data-section=".features"></span>
+            </li>
+            <li>
+                <div>Testimonials</div> <span data-section=".Testimonials"></span>
+            </li>
+        </ul>
+    </div>
+    <!-- end fast section -->
     <div class="landing">
         <div class="overlayer"></div>
         <div class="container">
@@ -66,7 +103,21 @@
                     <li><a class="active" href="#">about</a></li>
                     <li><a href="#"> Services</a></li>
                     <li><a href="#">Contact</a> </li>
+                    <li><a href="#">timeline</a> </li>
+                    <li><a href="#">features</a> </li>
+                    <li><a href="#">Testimonials</a> </li>
                 </ul>
+                <i class="fa-solid fa-bars"></i>
+                <div class="mini-menu">
+                    <ul class="menu-links">
+                        <li><a class="active" href="#">about</a></li>
+                        <li><a href="#"> Services</a></li>
+                        <li><a href="#">Contact</a> </li>
+                        <li><a href="#">timeline</a> </li>
+                        <li><a href="#">features</a> </li>
+                        <li><a href="#">Testimonials</a> </li>
+                    </ul>
+                </div>
             </nav>
             <div class="landing-text">
                 <h2>we are <span>creative</span> agency</h2>
@@ -144,6 +195,7 @@
     <!-- start Timeline -->
     <div class="Timeline">
         <div class="container">
+            <h2 class="title">Time line</h2>
             <!-- start year -->
             <div class="box-container one">
                 <div class="box left">
@@ -190,6 +242,142 @@
         </div>
     </div>
     <!-- end Timeline -->
+    <!-- start features -->
+    <div class="features">
+        <h2 class="title">our features</h2>
+        <div class="container">
+            <!-- start box -->
+            <div class="box">
+                <div class="image">
+                    <img src="img/avatar-01.png" alt="">
+                </div>
+                <h3>Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione unde architecto</p>
+
+            </div>
+            <!-- end box -->
+            <!-- start box -->
+            <div class="box">
+                <div class="image">
+                    <img src="img/avatar-02.png" alt="">
+                </div>
+                <h3>Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione unde architecto</p>
+
+            </div>
+            <!-- end box -->
+            <!-- start box -->
+            <div class="box">
+                <div class="image">
+                    <img src="img/avatar-03.png" alt="">
+                </div>
+                <h3>Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione unde architecto</p>
+            </div>
+            <!-- end box -->
+            <!-- start box -->
+            <div class="box">
+                <div class="image">
+                    <img src="img/avatar-04.png" alt="">
+                </div>
+                <h3>Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione unde architecto</p>
+
+            </div>
+            <!-- end box -->
+            <!-- start box -->
+            <div class="box">
+                <div class="image">
+                    <img src="img/avatar-05.png" alt="">
+                </div>
+                <h3>Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione unde architecto</p>
+
+            </div>
+            <!-- end box -->
+            <!-- start box -->
+            <div class="box">
+                <div class="image">
+                    <img src="img/avatar-06.png" alt="">
+                </div>
+                <h3>Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione unde architecto</p>
+
+            </div>
+            <!-- end box -->
+
+        </div>
+    </div>
+    <!-- end features -->
+
+    <!-- start Testimonials -->
+    <div class="Testimonials">
+        <div class="container">
+            <h2 class="title">Testimonials</h2>
+            <div class="box-container">
+                <!-- start box -->
+                <div class="box">
+                    <p>Iam very happy with the product its amazing and i recieve it very fast and the price was imazing
+                    </p>
+                    <div class="info">
+                        <img src="img/avatar-02.png" alt="">
+                        <div class="text">
+                            <h3>Ahmed mosaad</h3>
+                            <p>CEO At Company</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end box  -->
+                <!-- start box -->
+                <div class="box">
+                    <p>Iam very happy with the product its amazing and i recieve it very fast and the price was imazing
+                    </p>
+                    <div class="info">
+                        <img src="img/avatar-03.png" alt="">
+                        <div class="text">
+                            <h3>Ahmed mosaad</h3>
+                            <p>CEO At Company</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end box  -->
+                <!-- start box -->
+                <div class="box">
+                    <p>Iam very happy with the product its amazing and i recieve it very fast and the price was imazing
+                    </p>
+                    <div class="info">
+                        <img src="img/avatar-04.png" alt="">
+                        <div class="text">
+                            <h3>Ahmed mosaad</h3>
+                            <p>CEO At Company</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end box  -->
+            </div>
+        </div>
+    </div>
+    <!-- end Testimonials -->
+
+    <!-- start contact us  -->
+    <div class="contact-us">
+        <h2 class="title">contact Us</h2>
+        <div class="container">
+            <form action="" class="form">
+                <div>
+                    <input type="text" name="firstname" id="" placeholder="Your name">
+                    <input type="text" name="phone" id="" placeholder="Your phone">
+                    <input type="email" name="email" id="" placeholder="your email">
+                    <input type="text" name="subject" id="" placeholder="subject">
+                </div>
+                <div>
+                    <textarea name="message" id="" placeholder="Your message"></textarea>
+                    <input type="submit" value="Send">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- end contact us  -->
     <script src="js/master.js"></script>
 </body>
 

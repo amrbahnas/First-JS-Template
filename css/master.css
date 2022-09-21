@@ -14,6 +14,11 @@ html {
     scroll-behavior: smooth;
 }
 
+::selection {
+    color: white;
+    background: black;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -26,6 +31,20 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff url(../img/loder.gif) center no-repeat;
+    z-index: 9999;
+    background-size: 30%;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 
 .title {
@@ -147,7 +166,7 @@ a {
 }
 
 .setting-box .setting-container .option-box .color-links li:nth-child(2) {
-    background-color: var(--color-active);
+    background-color: #E91E63;
 }
 
 .setting-box .setting-container .option-box .color-links li:nth-child(3) {
@@ -288,6 +307,7 @@ nav {
     padding: 30px 0;
     align-items: center;
     z-index: 1000;
+
 }
 
 nav .logo {
@@ -335,7 +355,7 @@ nav .mini-menu {
     background-color: white;
     top: 90%;
     width: 100%;
-    padding: 10px;
+    padding: 10px 10px 5px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -349,6 +369,15 @@ nav .mini-menu {
     opacity: 0;
     visibility: hidden;
 }
+
+
+@media (min-width:992px) {
+    nav .mini-menu {
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+}
+
 
 nav .display-mini-menu {
     opacity: 1;
@@ -366,12 +395,35 @@ nav .mini-menu::after {
     right: 21px;
 }
 
+nav .mini-menu .menu-links li {
+    padding: 10px 20px;
+
+}
+
+nav .mini-menu .menu-links li:not(li:last-child) {
+    border-bottom: 1px solid #009688;
+
+}
+
 nav .mini-menu .menu-links li a {
     color: var(--color-active);
     display: block;
-    padding: 5px 20px;
-    border-bottom: 1px solid #009688;
     margin-bottom: 5px;
+    color: black;
+    text-align: left;
+}
+
+nav .mini-menu .menu-links li a:hover {
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transform: translateX(5px);
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    -ms-transform: translateX(5px);
+    -o-transform: translateX(5px);
 }
 
 .landing-text {
@@ -889,7 +941,7 @@ nav .mini-menu .menu-links li a {
 }
 
 .contact-us .form>div:first-child input {
-    border: 1px solid #009688;
+    border: 1px solid #ccc;
     margin-bottom: 10px;
     width: 100%;
     padding: 10px;
@@ -940,7 +992,8 @@ nav .mini-menu .menu-links li a {
     resize: none;
     padding: 10px;
     background-color: #eee;
-    border: 1px solid #009688;
+    border: 1px solid #ccc;
+
 
 }
 

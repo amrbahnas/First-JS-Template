@@ -33,6 +33,7 @@ a {
     text-decoration: none;
 }
 
+
 #preloader {
     position: fixed;
     width: 100%;
@@ -298,7 +299,7 @@ a {
     z-index: 1;
 }
 
-nav {
+header {
     position: relative;
     color: #fff;
     z-index: 2;
@@ -310,18 +311,18 @@ nav {
 
 }
 
-nav .logo {
+header .logo {
     width: fit-content;
     font-size: 18px;
     font-weight: bold;
 }
 
-nav .links {
+header .links {
     display: flex;
     gap: 15px;
 }
 
-nav>i.fa-solid {
+header>i.fa-solid {
     font-size: 24px;
     cursor: pointer;
     display: none;
@@ -329,28 +330,28 @@ nav>i.fa-solid {
 }
 
 @media (max-width:992px) {
-    nav .links {
+    header .links {
         display: none;
     }
 
-    nav>i.fa-solid {
+    header>i.fa-solid {
         display: block;
     }
 }
 
-nav .links li a {
+header .links li a {
     font-size: 16px;
     color: #fff;
     text-transform: capitalize;
 }
 
-nav .links li a.active,
-nav .links li a:hover {
+header .links li a.active,
+header .links li a:hover {
     color: var(--color-active);
 }
 
 
-nav .mini-menu {
+header .mini-menu {
     position: absolute;
     background-color: white;
     top: 90%;
@@ -373,20 +374,20 @@ nav .mini-menu {
 
 
 @media (min-width:992px) {
-    nav .mini-menu {
+    header .mini-menu {
         opacity: 0 !important;
         visibility: hidden !important;
     }
 }
 
 
-nav .display-mini-menu {
+header .display-mini-menu {
     opacity: 1;
     visibility: visible;
 
 }
 
-nav .mini-menu::after {
+header .mini-menu::after {
     content: '';
     position: absolute;
     border-color: transparent transparent white transparent;
@@ -396,17 +397,17 @@ nav .mini-menu::after {
     right: 21px;
 }
 
-nav .mini-menu .menu-links li {
+header .mini-menu .menu-links li {
     padding: 10px 20px;
 
 }
 
-nav .mini-menu .menu-links li:not(li:last-child) {
+header .mini-menu .menu-links li:not(li:last-child) {
     border-bottom: 1px solid #009688;
 
 }
 
-nav .mini-menu .menu-links li a {
+header .mini-menu .menu-links li a {
     color: var(--color-active);
     display: block;
     margin-bottom: 5px;
@@ -414,7 +415,7 @@ nav .mini-menu .menu-links li a {
     text-align: left;
 }
 
-nav .mini-menu .menu-links li a:hover {
+header .mini-menu .menu-links li a:hover {
     transition: 0.3s;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
@@ -442,10 +443,22 @@ nav .mini-menu .menu-links li a:hover {
     justify-content: center;
 }
 
+@media (max-width:767px) {
+    .landing-text {
+        width: 80%;
+    }
+}
+
 .landing-text h2 {
     margin-bottom: 20px;
     font-size: 50px;
 
+}
+
+@media (max-width:767px) {
+    .landing-text h2 {
+        font-size: 40px;
+    }
 }
 
 .landing-text h2 span {
@@ -519,14 +532,19 @@ nav .mini-menu .menu-links li a:hover {
     justify-content: space-between;
     background-color: white;
     margin-bottom: 15px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .skills .container .skills-bar h2 {
     width: 140px;
     text-transform: capitalize;
-    color: black;
+    color: var(--color-active);
     text-align: center;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 18px;
 }
 
@@ -1023,3 +1041,15 @@ nav .mini-menu .menu-links li a:hover {
 }
 
 /* end contact us  */
+
+/* start footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    text-transform: capitalize;
+}
+
+/* end footer */

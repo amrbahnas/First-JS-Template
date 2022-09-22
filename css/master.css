@@ -105,7 +105,7 @@ a {
 /* box setting */
 .setting-box {
     position: fixed;
-    z-index: 1000;
+    z-index: 1001;
     background-color: white;
     height: 100vh;
     width: 200px;
@@ -368,6 +368,7 @@ nav .mini-menu {
     -o-transition: 0.3s;
     opacity: 0;
     visibility: hidden;
+
 }
 
 
@@ -638,6 +639,7 @@ nav .mini-menu .menu-links li a:hover {
 .Timeline {
     padding: 50px 0;
     background-color: #eeeeee;
+    overflow: hidden;
 }
 
 .Timeline .container .box-container {
@@ -719,6 +721,13 @@ nav .mini-menu .menu-links li a:hover {
     padding: 20px;
     flex: 1;
     height: fit-content;
+}
+
+@media (max-width:768px) {
+    .Timeline .container .box-container .box {
+        animation: asd !important;
+        -webkit-animation: asd !important;
+    }
 }
 
 .Timeline .container .box-container .box.right {

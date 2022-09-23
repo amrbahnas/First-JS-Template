@@ -4,7 +4,7 @@ let preloader = document.getElementById("preloader");
 window.addEventListener("load", function () {
     setTimeout(function () {
         preloader.style.display = "none"
-    }, 2500)
+    }, 3000)
 })
 
 // up button
@@ -132,7 +132,7 @@ function backgroundcontrol() {
         backgroundinterval = setInterval(() => {
             let randomNumber = Math.floor(Math.random() * imageArray.length);
             landingImage.style.backgroundImage = `url(img/${imageArray[randomNumber]})`;
-        }, 1000)
+        }, 10000)
     } else {
         clearInterval(backgroundinterval)
     }
@@ -196,9 +196,9 @@ resetButtom.onclick = function () {
 
 // mini menu button
 
-let menuButton = document.querySelector(" nav>i.fa-solid");
+let menuButton = document.querySelector(" header>i.fa-solid");
 menuButton.onclick = function () {
-    document.querySelector("nav .mini-menu").classList.toggle("display-mini-menu");
+    document.querySelector("header .mini-menu").classList.toggle("display-mini-menu");
 }
 
 //skills  section
